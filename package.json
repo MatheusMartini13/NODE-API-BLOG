@@ -1,0 +1,26 @@
+{
+  "name": "node-api-shop",
+  "version": "1.0.0",
+  "description": "A shop API to a project involving: NodeJs | Express | MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatheusMartini13/NODE-API-SHOP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatheusMartini13/NODE-API-SHOP/issues"
+  },
+  "homepage": "https://github.com/MatheusMartini13/NODE-API-SHOP#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
