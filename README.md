@@ -1,2 +1,2 @@
-# NODE-API-SHOP
-A shop API to a project involving: NodeJs | Express | MongoDB
+# NODE-API-NLOG
+A blog API to a project involving: NodeJs | Express | MongoDB
