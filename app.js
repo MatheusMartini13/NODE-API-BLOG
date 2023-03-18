@@ -1,6 +1,10 @@
 //Node Modules
 const path = require('path');
 
+//Tests
+const { createServer } = require('http');
+const { Server } = require('socket.io');
+
 //3rd Party Modules
 const express = require('express');
 const mongoose = require('mongoose');
@@ -9,7 +13,7 @@ const multer = require('multer');
 //Routes
 const feedRoutes = require('./routes/feed');
 const authRoutes = require('./routes/auth');
-const statusRoutes = require('./routes/status')
+const statusRoutes = require('./routes/status');
 
 //app
 const app = express();
@@ -85,6 +89,16 @@ mongoose
 		},
 	)
 	.then(() => {
-		app.listen(8080);
+		const server = app.listen(8080);
+		const io = require('./socket').init(server, {
+			cors: {
+				origin: '*',
+				methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+			},
+		});
+
+		io.on('connection', (socket) => {
+			console.log('Client connected!');
+		});
 	})
 	.catch((err) => console.log(err));
